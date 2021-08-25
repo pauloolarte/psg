@@ -1,0 +1,388 @@
+﻿
+@{
+    ViewBag.Title = "Adjunto";
+}
+
+<h2>Adjunto</h2>
+
+
+<html lang="es-pe">
+<head>
+    @*<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">*@
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    @*<link rel="stylesheet" href="/resources/demos/style.css">*@
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="~/Scripts/adjunto.js"></script>
+    <script src="~/Scripts/generic.js"></script>
+
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+            $("#datepicker1").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+            $("#datepicker2").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+            $("#datepicker3").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+            $("#datepicker4").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+            $("#datepicker5").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+            $("#datepicker6").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+            $("#datepicker7").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+
+
+    </script>
+</head>
+
+<body>
+
+
+
+    <div class="input-group mb-3">
+
+    </div>
+
+    <form id="frmAdjunto" method="post">
+
+        <table class='table'>
+            <tr>
+
+
+             
+
+                <td>
+
+                    <input type="file" name="NombreFile" title="seleccionar fichero" id="Archivo" />
+
+
+                </td>
+                <td>
+
+                    @*<select width="100px" class="form-control" name="idTipoAdjunto" id="cboTipoAdjunto">
+                    </select>*@
+
+
+                </td>
+                <td>
+                    <input type="text" class="form-control"
+                           id="txtComentario"
+                           size="8" name="Comentario"
+                           placeholder="Ingrese Comentario" />
+
+                </td>
+
+          
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-primary"
+                            onclick="AgregarAdjunto()"
+                            type="button" id="btnadjunto">
+                        Agregar Adjunto
+                    </button>
+                </td>
+
+                <td>
+
+
+
+                    <input type="hidden" class="form-control"
+                           name="Nombre" size="10" id="NombreArchivo" />
+
+                </td>
+
+                <td>
+
+
+
+                    <input type="hidden" class="form-control"
+                           name="idUsrCreacion" value="1" size="10" id="UsrCreacion" />
+
+                </td>
+                <td>
+
+
+
+                    <input type="hidden" class="form-control"
+                           name="idFalla" value="16" size="10" id="idFalla" />
+
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+        <br>
+        <br>
+
+
+        <div id="divTablaAdjuntos">
+
+        </div>
+
+        <!-- Button trigger modal -->
+        <!-- Modal -->
+
+        <div class="modal fade" id="ModFalla" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modificar Falla</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        @*<form id="frmModFallaAdmin" method="post">
+
+                            <table class='table' id="tabla">
+
+                                <tr>
+                                    <td>
+                                      <label>Falla</label>
+                                        <input type="text" class="form-control"
+                                               name="tituloM" size="10" />
+                                    
+                                    </td>
+
+                                    <td>
+                                 
+                                        <label>Estado</label>
+                                        <select width="250px" name="idEstado" class="form-control" id="cboEstado">
+                                        </select>
+
+
+
+
+                                    </td>
+
+
+                                    <td>
+
+
+                                        <input type="hidden" class="form-control"
+                                               name="idFallaM" size="10" id="idFalla" />
+                                       
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                    
+                                        <label>Solicitante</label>
+                                        <select width="250px" name="idusrSolicitanteM" class="form-control" id="cboSolicitanteM">
+                                        </select>
+
+
+                                   
+                                    </td>
+                                    <td>
+                                        <label>Número OS</label>
+                                        <input type="text" class="form-control"
+                                               name="numOSM" />
+                                       
+
+
+                                    </td>
+                                    <td>
+                                    
+                                        <label>Grupo</label>
+                                        <select width="250px" name="idGrupoM" class="form-control" id="cboGrupoM">
+                                        </select>
+
+
+
+                            
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                       <label>Nro. Serie</label>
+                                        <input type="text" class="form-control"
+                                               name="numserieM" />
+                            
+                                    </td>
+                                    <td>
+                             
+
+                                        <label>Fecha Falla:</label>
+                                        <input type="text" name="FechaFallaM" class="form-control" size="6" readonly="" id="datepicker5" />
+
+
+                             
+
+                                    </td>
+                                    <td>
+                             
+                                        <label>División</label>
+                                        <select width="250px" name="idDivisionM" class="form-control" id="cboDivisionM">
+                                        </select>
+
+
+                                
+
+                                    </td>
+
+                                </tr>
+                                <tr>
+
+                                    <td>
+                                        <label>Equipo</label>
+                                        <select width="250px" name="idTipoEquipoM" class="form-control" id="cboEquipoM">
+                                        </select>
+
+                                    </td>
+                                    <td>
+                                   
+
+                                        <label>Modelo</label>
+                                        <select width="250px" name="idModeloM" class="form-control" id="cboModeloM">
+                                        </select>
+
+
+
+                                    </td>
+                                    <td>
+                                
+                                        <label>Cliente</label>
+                                        <select width="250px" name="idClienteM" class="form-control" id="cboClienteM">
+                                        </select>
+
+
+
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        
+                                        <label>Faena</label>
+                                        <select width="250px" name="idFaenaM" class="form-control" id="cboFaenaM">
+                                        </select>
+
+
+                                    </td>
+                                    <td>
+                                      
+
+                                        <label>Fecha Reparación:</label>
+                                        <input type="text" name="FechaReparacionM" class="form-control" size="6" readonly="" id="datepicker6" />
+
+
+
+
+
+                                    </td>
+                                    <td>
+                                 
+                                        <label>Fecha Estimada</label>
+                                        <input type="text" name="FechaEstimadaM" class="form-control" size="6" readonly="" id="datepicker7" />
+
+
+
+
+
+                                    </td>
+
+                                </tr>
+                                <tr>
+
+                                    <td>
+                                       <label>Descripcion</label>
+                                        <input type="text" class="form-control"
+                                               name="DescripcionM" />
+
+
+                                    </td>
+                                </tr>
+
+                            </table>
+
+
+
+
+
+
+
+
+
+
+                        </form>*@
+
+
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" onclick="ModificarFallaAdmin()" class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>

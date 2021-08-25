@@ -1,0 +1,17 @@
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\bin\Release\Capa Datos.dll
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\bin\Release\Capa Datos.pdb
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\bin\Release\Capa Entidad.dll
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\bin\Release\System.Configuration.ConfigurationManager.dll
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\bin\Release\System.Security.AccessControl.dll
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\bin\Release\System.Security.Permissions.dll
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\bin\Release\System.Security.Principal.Windows.dll
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\bin\Release\Capa Entidad.pdb
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\bin\Release\System.Configuration.ConfigurationManager.xml
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\bin\Release\System.Security.AccessControl.xml
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\bin\Release\System.Security.Permissions.xml
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\bin\Release\System.Security.Principal.Windows.xml
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\obj\Release\Capa Datos.csproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\obj\Release\Capa Datos.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\obj\Release\Capa Datos.csproj.CopyComplete
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\obj\Release\Capa Datos.dll
+C:\Users\Usuario\source\repos\WebApplication1\Capa Datos\obj\Release\Capa Datos.pdb

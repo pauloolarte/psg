@@ -1,0 +1,1439 @@
+﻿
+@{
+    ViewBag.Title = "Listado de Campañas";
+}
+
+<h2>Listado de Campañas</h2>
+
+
+<html lang="es-pe">
+<head>
+    @*<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">*@
+
+    @*<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">*@
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="~/Content/bootstrap.css">
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    @*<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>*@
+
+
+
+    <script src="~/Scripts/generic.js"></script>
+    <script src="~/Scripts/campania.js"></script>
+    <script src="~/Scripts/sweetalert.js"></script>
+
+    <script>
+
+    </script>
+
+    <script>
+
+        //$(document).ready(function () {
+        //    $('#Upload').click(function () {
+
+        //        var fileUpload = $("#files").get(0);
+        //        var files = fileUpload.files;
+
+        //        // Create  a FormData object
+        //        var fileData = new FormData();
+
+        //        // if there are multiple files , loop through each files
+        //        for (var i = 0; i < files.length; i++) {
+        //            fileData.append(files[i].name, files[i]);
+        //        }
+
+        //        // Adding more keys/values here if need
+        //        fileData.append('Test', "Test Object values");
+
+        //        $.ajax({
+        //            url: '/Home/UploadFiles', //URL to upload files
+        //            type: "POST", //as we will be posting files and other method POST is used
+        //            processData: false, //remember to set processData and ContentType to false, otherwise you may get an error
+        //            contentType: false,
+        //            data: fileData,
+        //            success: function (result) {
+        //                alert(result);
+        //            },
+        //            error: function (err) {
+        //                alert(err.statusText);
+        //            }
+        //        });
+
+        //    });
+        //});
+
+        /////////Modificar Adjunto Carga de Archivo//////////////////
+
+        //$(document).ready(function () {
+        //    $('#UploadM').click(function () {
+
+        //        var fileUpload = $("#filesm").get(0);
+        //        var files = fileUpload.files;
+
+        //        // Create  a FormData object
+        //        var fileData = new FormData();
+
+        //        // if there are multiple files , loop through each files
+        //        for (var i = 0; i < files.length; i++) {
+        //            fileData.append(files[i].name, files[i]);
+        //        }
+
+        //        // Adding more keys/values here if need
+        //        fileData.append('Test', "Test Object values");
+
+        //        $.ajax({
+        //            url: '/Home/UploadFiles', //URL to upload files
+        //            type: "POST", //as we will be posting files and other method POST is used
+        //            processData: false, //remember to set processData and ContentType to false, otherwise you may get an error
+        //            contentType: false,
+        //            data: fileData,
+        //            success: function (result) {
+        //                alert(result);
+        //            },
+        //            error: function (err) {
+        //                alert(err.statusText);
+        //            }
+        //        });
+
+        //    });
+        //});
+
+
+
+        $(function () {
+            $("#datepicker").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+            $("#datepicker1").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+            $("#datepicker2").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+            $("#datepicker3").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+            $("#datepicker4").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+            $("#datepicker5").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+            $("#datepicker6").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        $(function () {
+            $("#datepicker7").datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        //var local_source = [
+        //    { id: 1, value: "C++" },
+        //    { id: 2, value: "Java" },
+        //    { id: 3, value: "Net" }
+        //];
+
+        //alert('Cambios Autocomplte');
+
+        //$("#lan").autocomplete({
+        //    source: local_source
+        //});
+
+        //$(function () {
+        //    var availableTags = [
+        //        "ActionScript",
+        //        "AppleScript",
+        //        "Asp",
+        //        "BASIC",
+        //        "C",
+        //        "C++",
+        //        "Clojure",
+        //        "COBOL",
+        //        "ColdFusion",
+        //        "Erlang",
+        //        "Fortran",
+        //        "Groovy",
+        //        "Haskell",
+        //        "Java",
+        //        "JavaScript",
+        //        "Lisp",
+        //        "Perl",
+        //        "PHP",
+        //        "Python",
+        //        "Ruby",
+        //        "Scala",
+        //        "Scheme"
+        //    ];
+
+        //    var local_source = [];
+
+        //    fetchGet("Falla/listarClientes", function (data) {
+
+        //        for (var j = 0; j < data.length; j++) {
+        //            elemento = data[j];
+
+        //            var obj = { idCliente: elemento["idCliente"], Nombre: elemento["Nombre"] };
+
+
+
+        //            local_source.push(obj);
+
+        //        }
+
+        //    });
+
+        //    $('#cliente').autocomplete({
+        //        source: function (request, response) {
+        //            response($.map(local_source, function (item) {
+        //                return {
+        //                    id: item.idCliente,
+        //                    value: item.Nombre
+        //                }
+        //            }
+        //            ))
+
+        //        },
+        //        appendTo: $('#exampleModalCenter'),
+        //        select: function (event, ui) {
+        //            $(this).val(ui.item.value),
+        //                $('#idcli').val(ui.item.id)
+        //        }
+
+
+        //    });
+
+
+
+        //});
+
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+
+
+    <div class="input-group mb-3">
+
+    </div>
+    <table class='table'>
+
+        <tr>
+            <td>
+                @*<label>Fecha de Inicio:</label>*@
+                <input type="text" placeholder="Fecha de Inicio" size="6" class="form-control" readonly="" id="datepicker" />
+
+            </td>
+
+            <td>
+                @*<label>Fecha de Fin:</label>*@
+                <input type="text" placeholder="Fecha de Fin" class="form-control" size="6" readonly="" id="datepicker1" />
+
+            </td>
+
+            <td>
+                <input type="text" class="form-control"
+                       id="txtordenservicio"
+                       size="8"
+                       placeholder="Ingrese Orden de Servicio" />
+
+            </td>
+            <td>
+
+                <select width="250px" class="form-control" id="cboEstadoFalla">
+                </select>
+
+            </td>
+            <td>
+                <button class="btn btn-primary"
+                        onclick="BuscarFalla()"
+                        type="button" id="btnordenservicio">
+                    Buscar
+                </button>
+            </td>
+
+            <!--<td>-->
+            @*<div class="ui-widget">*@
+            <!--<label for="tags">Tags: </label>
+            <input id="clientedd">
+            <label for="idtag">Idtag: </label>
+            <input id="idclidd">-->
+            @*</div>*@
+
+            @*<label for="tags">languaje name</label>
+                <input id="lan" autocomplete="on">id<input id="lan_id">*@
+
+            <!--</td>-->
+
+
+        </tr>
+
+    </table>
+
+    <button type="button" class="btn btn-primary" onclick="CargarNuevaFalla()" data-toggle="modal" data-target="#exampleModalCenter">
+        Nueva Campaña
+    </button>
+
+    <br>
+    <br>
+
+
+    <div id="divTabla">
+
+    </div>
+
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        @*<div class="modal-dialog modal-dialog-centered" role="document">*@
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Registrar Falla</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#crearfalla" role="tab" aria-controls="pills-home" aria-selected="true">Datos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#adjuntocrear" role="tab" aria-controls="pills-home" aria-selected="true">Adjuntos</a>
+                        </li>
+
+                        @*<li class="nav-item">
+                                <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#equipo" role="tab" aria-controls="pills-home" aria-selected="true">Equipo</a>
+                            </li>*@
+
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane active" id="crearfalla" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                            <form id="frmFalla" method="post">
+                                <table class='table table-bordered' id="tabla">
+
+                                    <tr>
+                                        <td>
+
+                                            <label>Falla</label>
+                                            <input style="width:100%;box-sizing:border-box" type="text" class="form-control"
+                                                   name="titulo" size="1" />
+
+                                            <input type="hidden" id="idEquipoFinal" name="idEquipoF">
+
+                                            @*<a data-toggle="modal" href="#myModal2" class="btn btn-primary">Open modal2</a>*@
+
+                                        </td>
+
+                                    </tr>
+                                </table>
+
+                                <table class='table table-bordered' id="tabla">
+
+                                    @*<tr>
+                                            <td colspan="5">
+
+                                                <label>Falla</label>
+                                                <input style="width:100%;box-sizing:border-box" type="text" class="form-control"
+                                                       name="titulo" size="1" />
+
+                                                <input type="hidden" id="idEquipoFinal" name="idEquipoF">
+
+
+                                            </td>
+
+
+
+
+
+                                        </tr>*@
+                                    <tr>
+                                        <td>
+                                            @*<div class="mb-3 col-md-5">*@
+
+                                            <label>Solicitante</label>
+                                            <select width="250px" name="idusrSolicitante" class="form-control" id="cboSolicitante">
+                                            </select>
+
+
+                                            @*</div>*@
+                                        </td>
+                                        <td>
+                                            @*<div class=" mb-3">*@
+                                            <label>Número OS</label>
+                                            <input type="text" class="form-control"
+                                                   name="numOS" />
+                                            @*</div>*@
+
+
+                                        </td>
+                                        <td>
+                                            @*<div class="mb-3 col-md-5">*@
+
+                                            <label>Grupo</label>
+                                            <select width="250px" name="idGrupo" class="form-control" id="cboGrupo">
+                                            </select>
+
+
+
+                                            @*</div>*@
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            @*<div class=" mb-3">*@
+                                            <label>Nro. Serie</label>
+
+                                            @*<input type="text" class="form-control"
+                                                name="numserie"
+                                                id="txtnumserie" />*@
+
+                                            <input id="txtnumserie" class="form-control" onkeypress="BuscaEquipoxSerie(event)" size="35" name="numserie" autocomplete="off">
+                                            <input type="hidden" id="idserie" name="idserief">
+
+
+                                        </td>
+                                        <td>
+                                            @*<Aca va la Faena>*@
+
+
+                                            @*<label>Fecha Falla:</label>
+                                                <input type="text" name="FechaFalla" class="form-control" size="6" readonly="" id="datepicker2" />*@
+
+                                            @*<div class=" mb-3">*@
+                                            <label>Faena: </label>
+                                            <br />
+                                            <input id="faena" class="form-control" size="35" name="Faena" autocomplete="off">
+                                            <input type="hidden" id="idfae" name="idFaena">
+
+                                            <input type="hidden" class="form-control"
+                                                   name="faenaRef" size="10" id="faenaRef" />
+
+                                            @*<select width="250px" name="idFaena" class="form-control" id="cboFaena">
+                                                </select>*@
+
+
+
+                                            @*</div>*@
+
+
+                                        </td>
+                                        <td>
+                                            @*<Aca va el Tipo de Equipo Registrar">*@
+
+                                            @*<label>División</label>
+                                                <select width="250px" name="idDivision" class="form-control" id="cboDivision">
+                                                </select>*@
+
+                                            <label>Tipo de Equipo</label>
+                                            <select width="250px" name="idTipoEquipo" class="form-control" id="cboEquipo">
+                                            </select>
+
+
+                                            @*</div>*@
+
+
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>
+                                            @*Aca va la Division Registrar*@
+                                            <label>División</label>
+                                            <select width="250px" name="idDivision" class="form-control" id="cboDivision">
+                                            </select>
+
+                                            @*<label>Tipo de Equipo</label>
+                                                <select width="250px" name="idTipoEquipo" class="form-control" id="cboEquipo">
+                                                </select>*@
+
+                                        </td>
+                                        <td>
+                                            @*<div class="mb-3 col-md-5">*@
+
+
+                                            <label>Modelo</label>
+                                            <select width="250px" name="idModelo" class="form-control" id="cboModelo">
+                                            </select>
+
+
+                                            @*</div>*@
+
+
+                                        </td>
+                                        <td>
+                                            @*<div class="mb-3 col-md-5">*@
+
+                                            @*<label>Cliente</label>
+                                                <select width="250px" name="idCliente" class="form-control" id="cboCliente">
+                                                </select>*@
+
+                                            @*<div class="ui-widget">*@
+                                            <label>Cliente: </label>
+                                            <br />
+                                            <input type="text" class="form-control" id="cliente" size="35">
+                                            <input type="hidden" id="idcli" name="idCliente">
+
+                                            <input type="hidden" class="form-control"
+                                                   name="clienteRef" size="10" id="clienteRef" />
+                                            @*</div>*@
+
+
+
+                                            @*</div>*@
+
+
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+                                            @*<div class=" mb-3">*@
+                                            <label>Fecha Falla:</label>
+                                            <input type="text" name="FechaFalla" class="form-control" size="6" readonly="" id="datepicker2" />
+
+
+                                            @*<label>Faena: </label>
+                                                <br />
+                                                <input id="faena" class="form-control" size="35" name="Faena" autocomplete="off">
+                                                <input type="hidden" id="idfae" name="idFaena">
+
+                                                <input type="hidden" class="form-control"
+                                                       name="faenaRef" size="10" id="faenaRef" />*@
+
+
+
+
+                                        </td>
+                                        <td>
+                                            @*<div class="mb-3 col-md-5">*@
+
+
+                                            <label>Fecha Reparación:</label>
+                                            <input type="text" name="FechaReparacion" class="form-control" size="6" readonly="" id="datepicker3" />
+
+
+
+
+
+                                            @*</div>*@
+
+
+                                        </td>
+                                        <td>
+                                            @*<div class="mb-3 col-md-5">*@
+
+
+                                            <label>Fecha Estimada</label>
+                                            <input type="text" name="FechaEstimada" class="form-control" size="6" readonly="" id="datepicker4" />
+
+
+
+
+                                            @*</div>*@
+
+
+                                        </td>
+
+                                    </tr>
+                                    <!--<tr>
+
+                                        <td>-->
+                                    @*<div class=" mb-3">*@
+                                    <!--<label>Descripcion</label>
+                                            <input type="text" class="form-control"
+                                                   name="Descripcion" />
+
+
+                                        </td>
+
+                                    </tr>-->
+
+                                </table>
+
+                                @*//////////////Nueva tabla*@
+
+                                <table class='table table-bordered' id="tabla">
+
+                                    <tr>
+
+                                        <td>
+                                            @*<div class=" mb-3">*@
+                                            <label>Descripcion</label>
+                                            <input type="text" class="form-control"
+                                                   name="Descripcion" />
+
+
+                                        </td>
+
+                                      
+
+                                    </tr>
+                                </table>
+
+                            </form>
+
+                        </div>
+
+
+
+                        <div class="tab-pane" id="adjuntocrear" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                            @*@using (Html.BeginForm("UploadFile", "Upload", FormMethod.Post , new { enctype = "multipart/form-data" }))
+                                {
+                                    <div>
+                                        @Html.TextBox("file", "", new { type = "file" }) <br />
+                                        <br />
+
+                                        <input type="submit" value="Cargar Archivo" />
+                                        @ViewBag.Message
+                                    </div>
+                                }*@
+
+                            <form id="frmAdjuntoCrear" method="post" enctype="multipart/form-data">
+
+                                <table class='table'>
+                                    <tr>
+
+
+                                        <td>
+
+                                            @*<input type="file" name="NombreFile" onchange="SeleccionarArchivo()" title="seleccionar fichero" id="ArchivoC" />
+
+
+                                                <button type="submit">Upload File </button>*@
+
+
+                                            <input type="file" id="files" name="files" />
+                                            @*<br />
+                                                <input type="button" id="Upload" value="Cargar Archivo" class="btn btn-primary" />*@
+
+
+
+
+                                        </td>
+
+
+
+                                        <td>
+                                            <select width="100px" class="form-control" name="idTipoAdjunto" id="cboTipoAdjuntoC">
+                                            </select>
+
+
+                                        </td>
+
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="form-control"
+                                                   id="txtComentarioC"
+                                                   size="8" name="ComentarioC"
+                                                   placeholder="Ingrese Comentario" />
+
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary"
+                                                    onclick="AgregarAdjuntoTemp()"
+                                                    type="button" id="btnadjunto">
+                                                Agregar Adjunto
+                                            </button>
+                                        </td>
+
+                                        <td>
+
+
+
+                                            <input type="hidden" class="form-control"
+                                                   name="Nombre" size="10" id="NombreArchivo" />
+
+                                        </td>
+
+                                        <td>
+
+
+
+                                            <input type="hidden" class="form-control"
+                                                   name="idUsrCreacion" value="1" size="10" id="UsrCreacion" />
+
+                                        </td>
+                                        <td>
+
+
+
+                                            <input type="hidden" class="form-control"
+                                                   name="idFalla" value="16" size="10" id="idFalla" />
+
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </form>
+
+                            <br>
+
+
+                            <div id="divTablaAdjuntosCrear">
+
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="tab-pane" id="equipo" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                            <form id="frmEquipo" method="post">
+
+                                <table class='table' id="tabla">
+
+                                    <tr>
+                                        @*<td>*@
+
+                                        @*<label>Codigo Equipo:</label>*@
+                                        @*<input type="text" class="form-control"
+                                            name="idEquipo" id="idEquipoE" />*@
+
+
+
+
+
+
+                                        @*</td>*@
+                                        <td>
+                                            <input type="hidden" class="form-control"
+                                                   name="idEquipo" id="idEquipoE" />
+
+                                            <label>Serie:</label>
+                                            <input type="text" class="form-control" id="SerieEquipo"
+                                                   onkeypress="enterKeyPressed(event)"
+                                                   name="Serie" size="1" />
+
+
+                                        </td>
+
+                                        <td>
+                                            @*<div class=" mb-3">*@
+                                            <label>Nombre:</label>
+                                            <input type="text" class="form-control"
+                                                   name="NombreEquipo" />
+                                            @*</div>*@
+
+
+                                        </td>
+
+                                        <td>
+                                            @*<div class=" mb-3">*@
+                                            <label>Estado:</label>
+                                            <input type="text" class="form-control"
+                                                   name="Estado" />
+                                            @*</div>*@
+
+
+                                        </td>
+
+
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            @*<Aca va la Division>*@
+                                            <label>Tipo de Equipo:</label>
+                                            <select width="250px" name="TipoEquipo" class="form-control" id="cboTipoEquipoE">
+                                            </select>
+
+                                        </td>
+
+                                        <td>
+                                            @*<div class=" mb-3">*@
+                                            <label>Cliente:</label>
+                                            <select width="250px" name="ClienteE" class="form-control" id="cboClienteE">
+                                            </select>
+
+                                        </td>
+
+                                        <td>
+                                            @*<div class=" mb-3">*@
+                                            <label>Faena:</label>
+                                            <select width="250px" name="FaenaE" class="form-control" id="cboFaenaE">
+                                            </select>
+
+                                        </td>
+
+                                        <td>
+
+                                            <label>Modelo:</label>
+                                            <select width="250px" name="ModeloE" class="form-control" id="cboModeloE">
+                                            </select>
+
+
+                                        </td>
+
+                                    </tr>
+
+
+                                </table>
+
+
+
+                            </form>
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>*@
+                    <button type="button" onclick="CerrarNuevaFalla()" class="btn btn-secondary">Cerrar</button>
+                    <button type="button" onclick="AgregarFalla()" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="ModFalla" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        @*<div class="modal-dialog modal-dialog-centered" role="document">*@
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modificar Falla</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-pills mb-3" style="width:100%" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#modfallatab" role="tab" aria-controls="pills-home" aria-selected="true">Datos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#adjuntotab" role="tab" aria-controls="pills-home" aria-selected="true">Adjuntos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" id="histestados" data-toggle="pill" href="#historialestados" role="tab" aria-controls="pills-home" aria-selected="true">Historial Estados</a>
+                        </li>
+
+                        @*<li class="nav-item">
+                                <a class="nav-link" id="equipo" data-toggle="pill" href="#equipomod" role="tab" aria-controls="pills-home" aria-selected="true">Equipo</a>
+                            </li>*@
+
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane active" id="modfallatab" role="tabpanel" aria-labelledby="pills-home-tab">
+
+
+
+
+                            <form id="frmModFalla" method="post">
+
+                                <table class='table' id="tabla">
+
+                                    <tr>
+                                        <td>
+                                            @*<div class="mb-3 col-md-5">*@
+
+                                            <label>Falla</label>
+                                            <input type="text" class="form-control"
+                                                   name="tituloM" size="10" />
+                                            @* </div>*@
+                                            <input type="hidden" id="idEquipoFinalM" name="idEquipoFM">
+
+                                        </td>
+
+                                        <td>
+                                            @*<div class="mb-3 col-md-5">*@
+
+                                            <label>Estado</label>
+                                            <select width="250px" name="idEstado" disabled="" class="form-control" id="cboEstado">
+                                            </select>
+
+
+
+                                            @*</div>*@
+
+                                        </td>
+
+
+
+                                        <td>
+
+
+                                            @*<div class="mb-3 col-md-5">*@
+                                            <input type="hidden" class="form-control"
+                                                   name="idFallaM" size="10" id="idFallaM" />
+                                            @* </div>*@
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            @*<div class="mb-3 col-md-5">*@
+
+                                            <label>Solicitante</label>
+                                            <select width="250px" name="idusrSolicitanteM" class="form-control" id="cboSolicitanteM">
+                                            </select>
+
+
+                                            @*</div>*@
+                                        </td>
+                                        <td>
+                                            @*<div class=" mb-3">*@
+                                            <label>Número OS</label>
+                                            <input type="text" class="form-control"
+                                                   name="numOSM" />
+                                            @*</div>*@
+
+
+                                        </td>
+                                        <td>
+                                            @*<div class="mb-3 col-md-5">*@
+
+                                            <label>Grupo</label>
+                                            <select width="250px" name="idGrupoM" class="form-control" id="cboGrupoM">
+                                            </select>
+
+
+
+                                            @*</div>*@
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label>Nro. Serie</label>
+                                            @*<input type="text" class="form-control"
+                                                name="numserieM" />*@
+
+
+                                            <input id="txtnumserieM" class="form-control" size="35" onkeypress="BuscaEquipoxSerieMod(event)" name="numserieM" autocomplete="off">
+                                            <input type="hidden" id="idserieM" name="idseriefm">
+
+
+                                        </td>
+                                        <td>
+                                            @*Aca va la Faena Mod>*@
+
+
+                                            @*<label>Fecha Falla:</label>
+                                                <input type="text" name="FechaFallaM" class="form-control" size="6" id="datepicker5" />*@
+
+                                            <label>Faena: </label>
+                                            <br />
+                                            <input id="faenam" class="form-control" disabled="" name="FaenaM" size="35" autocomplete="off">
+                                            <input id="idfaem" type="hidden" name="idFaenaM">
+
+                                            <input type="hidden" class="form-control"
+                                                   name="faenaRefM" size="10" id="faenaRefM" />
+
+
+                                            @*</div>*@
+
+
+                                        </td>
+                                        <td>
+                                            @*<Aca va el Tipo de Equipo">*@
+
+                                            @*<label>División</label>
+                                                <select width="250px" name="idDivisionM" class="form-control" id="cboDivisionM">
+                                                </select>*@
+
+                                            <label>Tipo de Equipo</label>
+                                            <select width="250px" name="idTipoEquipoM" disabled="" class="form-control" id="cboEquipoM">
+                                            </select>
+
+
+                                            @*</div>*@
+
+
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td>
+                                            @*<div class=" mb-3">*@
+                                            <label>División</label>
+                                            <select width="250px" name="idDivisionM" class="form-control" id="cboDivisionM">
+                                            </select>
+
+                                            @*<label>Tipo de Equipo</label>
+                                                <select width="250px" name="idTipoEquipoM" class="form-control" id="cboEquipoM">
+                                                </select>*@
+
+                                        </td>
+                                        <td>
+                                            @*<div class="mb-3 col-md-5">*@
+
+
+                                            <label>Modelo</label>
+                                            <select width="250px" name="idModeloM" disabled="" class="form-control" id="cboModeloM">
+                                            </select>
+
+
+                                            @*</div>*@
+
+
+                                        </td>
+                                        <td>
+                                            @*<div class="mb-3 col-md-5">*@
+
+                                            @*<label>Cliente</label>
+                                                <select width="250px" name="idClienteM" class="form-control" id="cboClienteM">
+                                                </select>*@
+
+                                            <label>Cliente: </label>
+                                            <br />
+                                            <input type="text" class="form-control" disabled="" id="clientem" size="35" name="Cliente">
+                                            <input type="hidden" id="idclim" name="idClienteM">
+
+                                            <input type="hidden" class="form-control"
+                                                   name="clienteRefM" size="10" id="clienteRefM" />
+
+
+
+                                            @*</div>*@
+
+
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+                                            @*<div class=" mb-3">*@
+
+                                            @*<label>Faena</label>
+                                                <select width="250px" name="idFaenaM" class="form-control" id="cboFaenaM">
+                                                </select>*@
+
+                                            <label>Fecha Falla:</label>
+                                            <input type="text" name="FechaFallaM" class="form-control" size="6" id="datepicker5" />
+
+
+                                            @*<label>Faena: </label>
+                                                <br />
+                                                <input id="faenam" class="form-control" name="FaenaM" size="35" autocomplete="off">
+                                                <input id="idfaem" type="hidden" name="idFaenaM">
+
+                                                <input type="hidden" class="form-control"
+                                                       name="faenaRefM" size="10" id="faenaRefM" />*@
+
+
+                                        </td>
+                                        <td>
+                                            @*<div class="mb-3 col-md-5">*@
+
+
+                                            <label>Fecha Reparación:</label>
+                                            <input type="text" name="FechaReparacionM" class="form-control" size="6" id="datepicker6" />
+
+
+
+
+
+                                            @*</div>*@
+
+
+                                        </td>
+                                        <td>
+                                            @*<div class="mb-3 col-md-5">*@
+
+
+                                            <label>Fecha Estimada</label>
+                                            <input type="text" name="FechaEstimadaM" class="form-control" size="6" id="datepicker7" />
+
+
+
+
+                                            @*</div>*@
+
+
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                    </tr>
+
+                                </table>
+
+                                <table class='table table-bordered' id="tabla">
+
+                                    <tr>
+
+                                        <td>
+
+                                            <label>Descripcion</label>
+                                            <input type="text" class="form-control"
+                                                   name="DescripcionM" />
+
+                                            <input type="hidden" class="form-control"
+                                                   id="idEstadoAnterior"
+                                                   size="8" name="idEstadoAnt" />
+
+
+                                        </td>
+
+                                    </tr>
+                                </table>
+
+
+
+
+
+
+
+
+
+
+
+
+                            </form>
+
+
+                        </div>
+
+
+                        <div class="tab-pane" id="adjuntotab" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                            <form id="frmAdjuntoM" method="post">
+
+                                <table class='table'>
+                                    <tr>
+
+
+                                        <td>
+
+                                            @*<input type="file" name="NombreFile" title="seleccionar fichero" id="ArchivoM" />*@
+
+                                            <input type="file" id="filesm" name="filesm" />
+                                            @*<br />
+                                                <input type="button" id="UploadM" value="Cargar Archivo" class="btn btn-primary" />*@
+
+
+                                        </td>
+
+
+
+                                        <td>
+                                            <select width="100px" class="form-control" name="idTipoAdjunto" id="cboTipoAdjuntoM">
+                                            </select>
+
+
+                                        </td>
+
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="form-control"
+                                                   id="txtComentarioM"
+                                                   size="8" name="Comentario"
+                                                   placeholder="Ingrese Comentario" />
+
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary"
+                                                    onclick="AgregarAdjuntoM()"
+                                                    type="button" id="btnadjuntom">
+                                                Agregar Adjunto
+                                            </button>
+                                        </td>
+
+                                        <td>
+
+
+
+                                            <input type="hidden" class="form-control"
+                                                   name="Nombre" size="10" id="NombreArchivoM" />
+
+                                        </td>
+
+                                        <td>
+
+
+
+                                            <input type="hidden" class="form-control"
+                                                   name="idUsrCreacion" value="1" size="10" id="UsrCreacion" />
+
+                                        </td>
+                                        <td>
+
+
+
+                                            <input type="hidden" class="form-control"
+                                                   name="idFalla" value="16" size="10" id="idFalla" />
+
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </form>
+
+                            <br>
+
+
+                            <div id="divTablaAdjuntosFR">
+
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="tab-pane" id="historialestados" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                            <table class='table'>
+                                <tr>
+
+
+
+
+
+                                    <td>
+                                        <label>Estado:</label>
+                                        <select width="100px" class="form-control" name="idEstadoL" id="cboEstadoL">
+                                        </select>
+
+
+                                    </td>
+                                    <td>
+
+                                        @*<div class=" mb-3">*@
+                                        <label>Comentarios:</label>
+                                        <textarea class="form-control form-control-lg" id="Comentario" name="ComentarioM"
+                                                  rows="3" placeholder="Comentario"></textarea>
+
+
+
+                                    </td>
+
+
+                                    <td>
+                                        <br />
+                                        <button class="btn btn-primary"
+                                                onclick="ModificarEstado()"
+                                                type="button" id="btnadjuntom">
+                                            Modificar Estado
+                                        </button>
+                                    </td>
+
+
+                                </tr>
+
+                            </table>
+
+
+
+                            <div id="divTablaHistEst">
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="tab-pane" id="equipomod" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                            <form id="frmEquipoMod" method="post">
+
+                                <table class='table' id="tabla">
+
+
+                                    <tr>
+                                        @*<td>*@
+
+                                        @*<label>Codigo Equipo:</label>*@
+                                        @*<input type="text" class="form-control"
+                                            name="idEquipoM" id="idEquipoEM" />*@
+
+
+
+
+
+                                        @*</td>*@
+                                        <td>
+
+                                            <input type="hidden" class="form-control"
+                                                   name="idEquipoM" id="idEquipoEM" />
+
+                                            <label>Serie:</label>
+                                            <input type="text" class="form-control" id="SerieEquipoM"
+                                                   onkeypress="BuscaEquipoxSerie(event)"
+                                                   name="SerieM" size="1" />
+
+
+                                        </td>
+
+                                        <td>
+                                            @*<div class=" mb-3">*@
+                                            <label>Nombre:</label>
+                                            <input type="text" class="form-control"
+                                                   name="NombreEquipoM" />
+                                            @*</div>*@
+
+
+                                        </td>
+
+                                        <td>
+                                            @*<div class=" mb-3">*@
+                                            <label>Estado:</label>
+                                            <input type="text" class="form-control"
+                                                   name="EstadoM" />
+                                            @*</div>*@
+
+
+                                        </td>
+
+
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            @*<div class=" mb-3">*@
+                                            <label>Tipo de Equipo:</label>
+                                            <select width="250px" name="TipoEquipoM" class="form-control" id="cboTipoEquipoEM">
+                                            </select>
+
+                                        </td>
+
+                                        <td>
+                                            @*<div class=" mb-3">*@
+                                            <label>Cliente:</label>
+                                            <select width="250px" name="ClienteEM" class="form-control" id="cboClienteEM">
+                                            </select>
+
+                                        </td>
+
+                                        <td>
+                                            @*<div class=" mb-3">*@
+                                            <label>Faena:</label>
+                                            <select width="250px" name="FaenaEM" class="form-control" id="cboFaenaEM">
+                                            </select>
+
+                                        </td>
+
+                                        <td>
+
+                                            <label>Modelo:</label>
+                                            <select width="250px" name="ModeloEM" class="form-control" id="cboModeloEM">
+                                            </select>
+
+
+                                        </td>
+
+                                    </tr>
+
+
+                                </table>
+
+
+
+                            </form>
+
+                        </div>
+
+
+
+                    </div> @*/Este es del tab content*@
+
+
+                </div> @*este es del modal-body*@
+                <div class="modal-footer">
+
+                    <button class="btn btn-primary"
+                            onclick="TrasladarFalla()"
+                            type="button" id="btntrasladafalla">
+                        Enviar a PSG
+                    </button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+
+                    <button type="button" onclick="ModificarFalla()" class="btn btn-primary">Guardar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+
+
+
+
+

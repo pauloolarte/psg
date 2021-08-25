@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Input";
+}
+
+<h2>Input</h2>
+
+<html>
+<head>
+    <style>
+        input {
+            width: 100%;
+        }
+    </style>
+    <script>
+
+      window.onload = function(event) {
+        document.getElementById('fileInput').addEventListener('change', handleFileSelect, false);
+      }
+
+      function handleFileSelect(event) {
+        var fileReader = new FileReader();
+        fileReader.onload = function(event) {
+          console.log(event.target.result);
+          }
+
+       
+        var file = event.target.files[0];
+          alert(file.name);
+          //var str = fileReader.readAsText(file);
+          var str = fileReader.readAsBinaryString(file);
+          alert(str);
+      }
+    </script>
+
+</head>
+<body>
+
+    <table style="background-color: blue; width: 100%;" cellpadding="0" cellspacing="0">
+        <tr>
+            <td style="background-color: red;   padding: 3px;">
+                <div style="margin-right: 3px;">
+                    <div style="padding-right: 3px;">
+                        <input type="text" style="width:100%;">
+                    </div>
+                </div>
+            </td>
+
+
+        </tr>
+    </table>
+
+    <input type="file" id="fileInput">
+
+</body>
+</html>
